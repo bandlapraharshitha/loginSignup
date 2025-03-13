@@ -8,12 +8,17 @@ const Signup = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('', {name, email, password})
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
     <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
       <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
       
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
             Full Name
