@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 const Signup = () => {
 
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -25,6 +25,7 @@ const Signup = () => {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="John Doe"
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         
@@ -39,6 +40,7 @@ const Signup = () => {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="you@example.com"
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         
@@ -53,6 +55,7 @@ const Signup = () => {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="••••••••"
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         
