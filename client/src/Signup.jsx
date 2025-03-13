@@ -11,6 +11,8 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('', {name, email, password})
+    .then(result => console.log(result))
+    .catch(err => console.log(err))
   }
 
   return (
